@@ -1,5 +1,6 @@
 #!/bin/bash
 clear;
+
 echo "This script shows the := syntax use for unset variables and variable expansion
 -----------------------------------------------------------------------------------"
 
