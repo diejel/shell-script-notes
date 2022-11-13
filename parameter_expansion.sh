@@ -36,3 +36,45 @@ echo "Actual values of the vars -> alias:$alias and lastname:$lastname"
 
 echo "---------------------------------------------------------"
 echo "Explanation: due to the lastname var does not exist, at applying param expansion, lastname var will assume the alias content.If name var had been declared, even being empty, it will maintain its original value, but since it is missing in the code, using this type of param expansion, it will replace the value of this missing var with the value of alias variable"
+
+
+echo "============================================================================
+"
+echo "This script shows the :- syntax use for variable expansion
+-----------------------------------------------------------------------------------"
+
+name=""
+alias="pimpo2"
+
+echo "name var is empty, -> name:$name 
+alias var is defined -> alias:$alias"
+
+echo "Will be tested the parameter expansion by active use of echo command:"
+echo  'echo ${name:-$alias}, remember name is an empty var'
+
+echo "Result of the command above: ${name:-$alias}"
+echo "Actual values of the vars -> alias:$alias and name:$name"
+
+echo "---------------------------------------------------------"
+echo "Explanation: The var name will remain ever the same, the only thing is that when var name is null, the echo will shows the the alias value, but in case var name is differnt of null, this var name value content will be shown"
+
+
+echo "============================================================================
+"
+echo "This script shows the - syntax use for variable expansion
+-----------------------------------------------------------------------------------"
+
+name=""
+alias="pimpo2"
+
+echo "name var is empty, -> name:$name 
+alias var is defined -> alias:$alias"
+
+echo "Will be tested the parameter expansion by active use of echo command:"
+echo  'echo ${name-$alias}, remember name is an empty var'
+
+echo "Result of the command above: ${name-$alias}"
+echo "Actual values of the vars -> alias:$alias and name:$name"
+
+echo "---------------------------------------------------------"
+echo "Explanation: The var name will remain ever the same, the only thing is that when another var is referenced, the echo will shows the the alias value, but in case var name is defined (with or without value), this var name value content will be shown"
